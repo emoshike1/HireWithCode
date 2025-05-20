@@ -6,7 +6,7 @@ import type {
   ApiResponse,
   WelcomeResponse,
   GuideResponse,
-  CandidateSubmission,
+  // CandidateSubmission,
 } from "./types";
 
 /**
