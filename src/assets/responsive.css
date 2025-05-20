@@ -1,0 +1,256 @@
+/* 响应式设计工具类 */
+
+/* 视口断点 */
+/* xs: 0-480px, sm: 480-768px, md: 768-992px, lg: 992-1200px, xl: >1200px */
+
+/* 容器 */
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* 响应式容器 */
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+/* 响应式栅格系统 */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.col {
+  position: relative;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  flex: 1 0 0%;
+}
+
+/* 特定尺寸的列 */
+.col-12 {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+.col-6 {
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+.col-4 {
+  flex: 0 0 33.333333%;
+  max-width: 33.333333%;
+}
+.col-3 {
+  flex: 0 0 25%;
+  max-width: 25%;
+}
+
+/* Small screens (手机) */
+@media (max-width: 576px) {
+  .col-sm-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .col-sm-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+
+  /* 移动设备上优化表单元素 */
+  input,
+  select,
+  textarea,
+  button {
+    font-size: 16px !important; /* 防止iOS缩放 */
+  }
+
+  /* 移动设备上按钮全宽 */
+  .btn-block-sm {
+    width: 100%;
+    display: block;
+  }
+
+  /* 移动设备上调整内边距 */
+  .p-sm-2 {
+    padding: 0.5rem !important;
+  }
+  .p-sm-3 {
+    padding: 1rem !important;
+  }
+
+  /* 固定位置的底部导航栏 */
+  .fixed-bottom-sm {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+}
+
+/* Medium screens (平板) */
+@media (min-width: 577px) and (max-width: 768px) {
+  .col-md-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .col-md-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  .col-md-4 {
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+  }
+}
+
+/* 常用的辅助类 */
+/* 显示与隐藏 */
+.d-none {
+  display: none !important;
+}
+.d-block {
+  display: block !important;
+}
+.d-flex {
+  display: flex !important;
+}
+
+@media (max-width: 576px) {
+  .d-sm-none {
+    display: none !important;
+  }
+  .d-sm-block {
+    display: block !important;
+  }
+  .d-sm-flex {
+    display: flex !important;
+  }
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+  .d-md-none {
+    display: none !important;
+  }
+  .d-md-block {
+    display: block !important;
+  }
+  .d-md-flex {
+    display: flex !important;
+  }
+}
+
+/* 对齐方式 */
+.text-center {
+  text-align: center !important;
+}
+.text-left {
+  text-align: left !important;
+}
+.text-right {
+  text-align: right !important;
+}
+
+/* 间距 */
+.mt-1 {
+  margin-top: 0.25rem !important;
+}
+.mt-2 {
+  margin-top: 0.5rem !important;
+}
+.mt-3 {
+  margin-top: 1rem !important;
+}
+.mt-4 {
+  margin-top: 1.5rem !important;
+}
+.mt-5 {
+  margin-top: 3rem !important;
+}
+
+.mb-1 {
+  margin-bottom: 0.25rem !important;
+}
+.mb-2 {
+  margin-bottom: 0.5rem !important;
+}
+.mb-3 {
+  margin-bottom: 1rem !important;
+}
+.mb-4 {
+  margin-bottom: 1.5rem !important;
+}
+.mb-5 {
+  margin-bottom: 3rem !important;
+}
+
+/* 移动优先的响应式设计 */
+/* 移动设备优化 */
+@media (max-width: 576px) {
+  /* 调整字体大小 */
+  h1 {
+    font-size: 1.75rem !important;
+  }
+  h2 {
+    font-size: 1.5rem !important;
+  }
+  h3 {
+    font-size: 1.25rem !important;
+  }
+
+  /* 调整按钮大小 */
+  .btn {
+    padding: 0.75rem 1.25rem !important;
+  }
+
+  /* 调整表单元素大小 */
+  input,
+  select,
+  textarea {
+    padding: 0.75rem !important;
+  }
+}
+
+/* 针对不同设备的自定义视口高度 */
+.vh-100 {
+  height: 100vh;
+}
+
+@media (max-width: 576px) {
+  .vh-100-sm {
+    height: 100vh;
+  }
+}
+
+/* 性能优化 - 对移动设备禁用某些动画 */
+@media (max-width: 576px) {
+  .no-animation-sm {
+    animation: none !important;
+    transition: none !important;
+  }
+}
